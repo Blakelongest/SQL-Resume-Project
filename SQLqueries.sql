@@ -5,7 +5,7 @@ SELECT * FROM sales
 SELECT * FROM subcategories
 SELECT * FROM territories
 
-							--- Sales Performance Analysis ---
+			--- Sales Performance Analysis ---
 (1)
 ---- Total Profit
 SELECT SUM((sales.orderquantity)*(products.productprice-products.productcost))::money 
@@ -74,7 +74,7 @@ ROUND((((SELECT SUM((products.productprice*sales.orderquantity))::money AS "Reve
 		HAVING EXTRACT (MONTH FROM sales.orderdate) = 1)*100)), '%') 
 AS "Revenue Growth Rate Between January & June"
 
-						--- Customer Segmentation Analysis ---
+		--- Customer Segmentation Analysis ---
 (1)
 ---- Top 10 Customers (Ranked by Profit Contribution)
 SELECT customers.firstname AS "Customer First Name",
@@ -117,7 +117,7 @@ GROUP BY customers.firstname, customers.lastname
 ORDER BY "Number of Orders" DESC
 
 
-						--- Product Performance Analysis ---
+		--- Product Performance Analysis ---
 (1)
 ----Top 5 Most Purchased Products
 SELECT products.productname, 
